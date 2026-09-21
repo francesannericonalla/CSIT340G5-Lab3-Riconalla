@@ -3,20 +3,20 @@ const Header = (props) => (
 )
 
 const Part = (props) => (
-  <p>{props.name} - {props.units} units</p>
+  <p>{props.part.name} - {props.part.units} units</p>
 )
 
 const Content = (props) => (
   <div>
-    <Part name={props.part1} units={props.units1} />
-    <Part name={props.part2} units={props.units2} />
-    <Part name={props.part3} units={props.units3} />
+    <Part part={props.part1} />
+    <Part part={props.part2} />
+    <Part part={props.part3} />
   </div>
 )
 
 const Total = (props) => (
   <p>
-    Total {props.units1 + props.units2 + props.units3} units
+    Total {props.part1.units + props.part2.units + props.part3.units} units
   </p>
 )
 
@@ -29,14 +29,20 @@ const Footer = (props) => (
 const App = () => {
   const course = 'Technopreneurship'
 
-  const part1 = 'Industry Elective 1'
-  const units1 = 3
+  const part1 = {
+    name: 'Industry Elective 1',
+    units: 3
+  }
 
-  const part2 = 'Industry Elective 2'
-  const units2 = 3
+  const part2 = {
+    name: 'Industry Elective 2',
+    units: 3
+  }
 
-  const part3 = 'Industry Elective 3'
-  const units3 = 3
+  const part3 = {
+    name: 'Industry Elective 3',
+    units: 3
+  }
 
   const studentName = 'Frances Anne B. Riconalla'
   const courseCode = 'CSIT340'
@@ -47,16 +53,13 @@ const App = () => {
       <Header course={course} />
       <Content
         part1={part1}
-        units1={units1}
         part2={part2}
-        units2={units2}
         part3={part3}
-        units3={units3}
       />
       <Total
-        units1={units1}
-        units2={units2}
-        units3={units3}
+        part1={part1}
+        part2={part2}
+        part3={part3}
       />
       <Footer
         name={studentName}
