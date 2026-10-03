@@ -27,22 +27,23 @@ const Footer = (props) => (
 )
 
 const App = () => {
-  const course = 'Technopreneurship'
-
-  const parts = [
-    {
-      name: 'Industry Elective 1',
-      units: 3
-    },
-    {
-      name: 'Industry Elective 2',
-      units: 3
-    },
-    {
-      name: 'Industry Elective 3',
-      units: 3
-    }
-  ]
+  const course = {
+    name: 'Technopreneurship',
+    parts: [
+      {
+        name: 'Industry Elective 1',
+        units: 3
+      },
+      {
+        name: 'Industry Elective 2',
+        units: 3
+      },
+      {
+        name: 'Industry Elective 3',
+        units: 3
+      }
+    ]
+  }
 
   const studentName = 'Frances Anne B. Riconalla'
   const courseCode = 'CSIT340'
@@ -50,9 +51,9 @@ const App = () => {
 
   return (
     <div>
-      <Header course={course} />
-      <Content parts={parts} />
-      <Total parts={parts} />
+      <Header course={course.name} />
+      <Content parts={course.parts} />
+      <Total parts={course.parts} />
       <Footer
         name={studentName}
         courseCode={courseCode}
